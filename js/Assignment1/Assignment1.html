@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+  <style>
+    #container {
+    
+      background-color: rgb(193, 183, 92);
+      padding: 20px;
+      width: 250px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    #logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%; 
+      object-fit: fill;  
+      margin-bottom: 10px;
+    }
+    h3 {
+      margin: 10px 0;
+    }
+    #count {
+      font-size: 2rem;
+      margin: 15px 0;
+      font-weight: bold;
+    }
+    #message {
+      font-size: 0.9rem;
+      color: rgb(255, 15, 15);
+      margin-top: 8px;
+      height: 18px; 
+    }
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .inc { background-color: #4caf50; color: white; }
+    .dec { background-color: #f44336; color: white; }
+    .reset { background-color: #2196f3; color: white; }
+    button:hover { opacity: 0.8; }
+  </style>
+</head>
+<body>
+  <div id="container">
+   
+    <img src="OIP.jpg" alt="Logo" id="logo">
+
+    <h3>Counter App</h3>
+    <div id="count">0</div>
+    <button class="inc">Increment</button>
+    <button class="dec">Decrement</button>
+
+    <div id="message"></div>
+  </div>
+
+  <script>
+    let count = 0;
+    const countEl = document.getElementById("count");
+    const incBtn = document.querySelector(".inc");
+    const decBtn = document.querySelector(".dec");
+    const resetBtn = document.querySelector(".reset");
+    const msg = document.getElementById("message");
+
+    incBtn.addEventListener("click", () => {
+      if (count < 10) {
+        count++;
+        countEl.textContent = count;
+        msg.textContent = "";
+      } else {
+        msg.textContent = "Maximum Limit Reached";
+      }
+    });
+
+    decBtn.addEventListener("click", () => {
+      if (count > 0) {
+        count--;
+        countEl.textContent = count;
+        msg.textContent = "";
+      } else {
+        msg.textContent = "Minimum Limit Reached";
+      }
+    });
+
+    resetBtn.addEventListener("click", () => {
+      count = 0;
+      countEl.textContent = count;
+      msg.textContent = "";
+    });
+  </script>
+</body>
+</html>

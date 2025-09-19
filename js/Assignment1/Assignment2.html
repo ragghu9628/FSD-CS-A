@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Image Buttons</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            background-size: cover; /* image covers entire body */
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background 0.7s; /* smooth change */
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body id="adi">
+    <button onclick="red()">Image 1</button>
+    <button onclick="green()">Image 2</button>
+    <button onclick="blue()">Image 3</button>
+
+    <script>
+        function red() {
+            document.getElementById("adi").style.backgroundImage =
+                "url('https://4kwallpapers.com/images/walls/thumbs_2t/23854.png')";
+        }
+
+        function green() {
+            document.getElementById("adi").style.backgroundImage =
+                "url('https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg')";
+        }
+
+        function blue() {
+            document.getElementById("adi").style.backgroundImage =
+                "url('https://images.pexels.com/photos/325044/pexels-photo-325044.jpeg')";
+        }
+    </script>
+</body>
+</html>
